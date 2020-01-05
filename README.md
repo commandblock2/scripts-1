@@ -1,5 +1,5 @@
 FAQ:
------
+---
 * **Q**:I want to install these scripts, what should I do?
 * **A**:You need LiquidBounce to install them, if you have it installed and you use default Minecraft Launcher go to **%appdata%/.minecraft/LiquidBounce-1.8/scripts/** and put all the files here, if you use LiquidLauncher go **%appdata%/.LiquidLauncher/gameDir/LiquidBounce-1.8/scripts/** and put files there. 
 
@@ -11,5 +11,5 @@ FAQ:
 
 * **Q**:Can I share edited scripts and/or earn on them?
 * **A**:Yes, these scripts are licensed on **GPL-3.0** license that allows it :)
-----
+---
 ![logo](https://camo.githubusercontent.com/178f507cf5a20c9bb3868f5bf72958d2a4351b2d/68747470733a2f2f696d6775722e636f6d2f6f4e50445368752e706e67)
