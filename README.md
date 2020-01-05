@@ -1,7 +1,10 @@
 FAQ:
 ---
 * **Q**:I want to install these scripts, what should I do?
-* **A**:You need LiquidBounce to install them, if you have it installed and you use default Minecraft Launcher go to **%appdata%/.minecraft/LiquidBounce-1.8/scripts/** and put all the files here, if you use LiquidLauncher go **%appdata%/.LiquidLauncher/gameDir/LiquidBounce-1.8/scripts/** and put files there. 
+* **A**:You need LiquidBounce to install them, if you have it installed and you use default Minecraft Launcher go to *%appdata%/.minecraft/LiquidBounce-1.8/scripts/* and put all the files here, if you use LiquidLauncher go *%appdata%/.LiquidLauncher/gameDir/LiquidBounce-1.8/scripts/* and put files there. 
+
+* **Q**: I installed scripts and they still doesn't appear in the scripts menu
+* **A**: Make sure that you have all needed libraries installed in the */LiquidBounce-1.8/scripts/lib*, you can get them from [here](https://github.com/CCBlueX/LiquidBounce-ScriptAPI/tree/master/lib)
 
 * **Q**:Is LiquidLauncher better and should I use it? 
 * **A**:LiquidLauncher at this moment have memory leak and its not recommended to use it, it makes your game works worse.
