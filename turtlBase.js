@@ -34,12 +34,6 @@ scriptAuthor = "simpleBase - LiquidBounce Javascript API Base for begginers and 
         return value.createList(text, Array.isArray(array) ? array : [''], Array.isArray(array) ? default_value : '');
     };
 
-    settings.name = 'script';
-    settings.tag = 'test';
-    settings.animatedTag = true;
-    settings.description = 'customized base!';
-    settings.category = 'Combat';
-    settings.autoEnable = true;
     settings.values = [
         bool = createBoolean("simple boolean", false), // (text, state)
         text = createText("simple text","simple text 2"), // (text, text after :)
@@ -47,6 +41,12 @@ scriptAuthor = "simpleBase - LiquidBounce Javascript API Base for begginers and 
         float = createFloat("simple float", 0.5, -12.5, 25.0), // (text, defualt value, minimal value, maximal value) [float accepts decimal places]
         list = createList("simple list", ["option1", "option2", "option3"], "option2"), // (name, text, list(javascript array), default value)
     ];
+    settings.name = 'script';
+    settings.tag = 'test';
+    settings.animatedTag = true;
+    settings.description = 'customized base!';
+    settings.category = 'Combat';
+    settings.autoEnable = true;
 
     function Script() {
         this.addValues = function (values) { try {for (i in settings.values) { values.add(settings.values[i]) } } catch(errors){chat.print(errors)}};
