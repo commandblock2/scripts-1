@@ -1,6 +1,6 @@
-scriptName = "simpleBase";
+scriptName = "Fly Example";
 scriptVersion = 1.0;
-scriptAuthor = "simpleBase - LiquidBounce Javascript API Base for begginers and not only";
+scriptAuthor = "flyExample made using turtlBase";
     logtext = '';
     nameScript = '';
     settings = {defaults:{name:'simpleBaseScript',values:'',tag:'', animatedTag:false,description:'',category:'Fun'},name:'',values:'',tag:'',description:'',category:'',autoEnable:false};
