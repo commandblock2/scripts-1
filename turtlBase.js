@@ -120,9 +120,9 @@ scriptAuthor = "simpleBase - LiquidBounce Javascript API Base for begginers and 
 
         };
         this.onKey = function (event) { //executed when pressing any key
-            var pressedKey = event.getKey(); // Get keyCodes here: (https://minecraft.gamepedia.com/Key_codes)
-            var key = ['escape', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'backspace', 'tab', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '[', ']', 'enter', 'left_control', 'a', 's', 'd' , 'f', 'g', 'h', 'j', 'k', 'l', ';', "'", '`', 'left_shift', '\\', 'z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '/', 'right_shift', 'numpad_*', 'left_alt', 'spacebar', 'f1', 'f2', 'f3', 'f4', 'f5', 'f6', 'f7', 'f8', 'f9' , 'f10', 'num_lock', 'scroll_lock', 'numpad_7', 'numpad_8', 'numpad_9', 'numpad_-', 'numpad_4', 'numpad_5', 'numpad_6', 'numpad_+', 'numpad_1', 'numpad_2', 'numpad_3', 'numpad_0', 'numpad_.', 'unknown', 'unknown', 'f11', 'f12']; // you can expand it using link up here
-            var pressedKey_name = key[pressedKey - 1] != undefined ? key[pressedKey - 1] : "unsupported, you can expand it by changing key variable!";
+            pressedKey = event.getKey(); // Get keyCodes here: (https://minecraft.gamepedia.com/Key_codes)
+            key = ['escape', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'backspace', 'tab', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '[', ']', 'enter', 'left_control', 'a', 's', 'd' , 'f', 'g', 'h', 'j', 'k', 'l', ';', "'", '`', 'left_shift', '\\', 'z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '/', 'right_shift', 'numpad_*', 'left_alt', 'spacebar', 'f1', 'f2', 'f3', 'f4', 'f5', 'f6', 'f7', 'f8', 'f9' , 'f10', 'num_lock', 'scroll_lock', 'numpad_7', 'numpad_8', 'numpad_9', 'numpad_-', 'numpad_4', 'numpad_5', 'numpad_6', 'numpad_+', 'numpad_1', 'numpad_2', 'numpad_3', 'numpad_0', 'numpad_.', 'unknown', 'unknown', 'f11', 'f12']; // you can expand it using link up here
+            pressedKey_name = key[pressedKey - 1] != undefined ? key[pressedKey - 1] : "unsupported, you can expand it by changing key variable!";
             //chat.print(pressedKey_name); // Prints name of pressed key in chat
         };
         this.onMove = function (event) { //executed on your move
@@ -132,7 +132,7 @@ scriptAuthor = "simpleBase - LiquidBounce Javascript API Base for begginers and 
 
    function onLoad() { // executed when script is loaded
         autoEnable = settings.autoEnable == true ? true : settings.autoEnable == false ? false : false;
-        moduleManager.getModule(nameScript).setState(autoEnable ? true : moduleManager.getModule(nameScript).getState());
+        moduleManager.getModule(nameScript).state = autoEnable ? true : moduleManager.getModule(nameScript).state;
 
         setTimeout(function(){
             chat.print('\u00A78- - - - - - - - - - - - - - - - - - ')
@@ -144,11 +144,15 @@ scriptAuthor = "simpleBase - LiquidBounce Javascript API Base for begginers and 
    modules = [
        new Script()
    ];
+   moduleNames = [
+       nameScript;
+   ];
 
 function onEnable() {
-    for (var i in modules) moduleManager.registerModule(modules[i]);
+    for (i in modules) moduleManager.registerModule(modules[i]);
 };
 
 function onDisable() {
-    for (var i in modules) moduleManager.unregisterModule(modules[i]);
+    for (i in moduleNames) moduleManager.getModule(moduleNames[i]).state = false;
+    for (i in modules) moduleManager.unregisterModule(modules[i]);
 };
