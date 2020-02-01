@@ -24,8 +24,8 @@ function simpleScript() {
         return moduleTag;
     };
     this.getDescription = function () {
-        script_description = description(moduleName + 'is a cool script!') //usage - description(text[var/string]); //sets description to "simpleScript is a cool script!"
-        return script_description;
+        moduleDescription = description(moduleName + 'is a cool script!') //usage - description(text[var/string]); //sets description to "simpleScript is a cool script!"
+        return moduleDescription;
     };
     this.getCategory = function () {
         moduleCategory = category('player'); //usage - category(category[var/string]) //sets category to player
