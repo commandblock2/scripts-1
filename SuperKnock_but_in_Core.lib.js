@@ -33,19 +33,19 @@ module = {
                 m == "Packet" ? sprint ? mc.thePlayer.sendQueue.addToSendQueue(new C0BPacketEntityAction(mc.thePlayer, C0BPacketEntityAction.Action.STOP_SPRINTING)) : m == "PacketW-Tap" ? mc.thePlayer.sendQueue.addToSendQueue(new C0BPacketEntityAction(mc.thePlayer, C0BPacketEntityAction.Action.START_SPRINTING)) : sprint ? mc.thePlayer.setSprinting(false) : mc.thePlayer.setSprinting(true) : {};
                 sprint && m == "Packet" ? mc.thePlayer.sendQueue.addToSendQueue(new C0BPacketEntityAction(mc.thePlayer, C0BPacketEntityAction.Action.START_SPRINTING)) : m == "PacketW-Tap" && mc.thePlayer.setSprinting(true);
                 
-                timeout(rand(minDelay.get(), minDelay.get()), function () {
+                timeout(rand(minDelay.get(), maxDelay.get()), function () {
                     m == "Packet" ? mc.thePlayer.sendQueue.addToSendQueue(new C0BPacketEntityAction(mc.thePlayer, C0BPacketEntityAction.Action.STOP_SPRINTING)) : m == "PacketW-Tap" && mc.thePlayer.setSprinting(false);
                 });
 
-                sprint && timeout(rand(minDelay.get(), minDelay.get()) * rand(minMultiplier.get(), maxMultiplier.get()), function () {
+                sprint && timeout(rand(minDelay.get(), maxDelay.get()) * rand(minMultiplier.get(), maxMultiplier.get()), function () {
                     m == "Packet" ? mc.thePlayer.sendQueue.addToSendQueue(new C0BPacketEntityAction(mc.thePlayer, C0BPacketEntityAction.Action.START_SPRINTING)) : m == "PacketW-Tap" && mc.thePlayer.setSprinting(true);
                 });
             } else {
                 !sprint && mc.thePlayer.setSprinting(true);
-                timeout(rand(minDelay.get(), minDelay.get()), function () {
+                timeout(rand(minDelay.get(), maxDelay.get()), function () {
                     mc.gameSettings.keyBindForward.pressed = false;
                 });
-                timeout(rand(minDelay.get(), minDelay.get()) * rand(minMultiplier.get(), maxMultiplier.get()),function () {
+                timeout(rand(minDelay.get(), maxDelay.get()) * rand(minMultiplier.get(), maxMultiplier.get()),function () {
                     mc.gameSettings.keyBindForward.pressed = Keyboard.isKeyDown(mc.gameSettings.keyBindForward.getKeyCode());
                     mc.thePlayer.setSprinting(sprint);
                 });
